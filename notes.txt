@@ -1,12 +1,30 @@
-Results for the extraLargeArray
-insert 964.182479 ms
-append 3.918235 ms
+Results for the tinyArray
+insert 53.35 μs
+append 127.686 μs
 
-
-Results for the largeArray
-insert 6.79133 ms
-append 684.594 μs
+Results for the smallArray
+insert 22.056 μs
+append 27.14 μs
 
 Results for the mediumArray
-insert 196.505 μs
-append 240.208 μs
+insert 183.706 μs
+append 83.748 μs
+
+Results for the largeArray
+insert 9.93678 ms
+append 747.088 μs
+
+Results for the extraLargeArray
+insert 1.207794321 s
+append 7.264106 ms
+
+insert scales exponentially, it start out actually faster than the append method, but as you continue
+to increase the size of the array, you can see that the insert function takes exponentially more time,
+the append method tends to just increase in a linear fashion.
+
+the append function scales better, you can tell because of the time it takes when going from a
+regularly sized array to a larger array, the time increases dramatically
+
+the append function is faster due to the fact that the insert method, is inserting into the beginning of an array
+this makes the computer have to move all the rest of the items in the array, changing each item in its memory and correcting its index to be 1 more than it was prior
+and since we are adding at the beginning of the array you would have to loop through the entire array to change all of the indecies
